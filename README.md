@@ -14,7 +14,7 @@ To install and run Crypto Exchange locally:
 
 1. Clone the repository:
 	```sh
-	git clone https://github.com/Kivt/Crypto-Exchange.git
+	git clone https://github.com/Kivt/crypto_exchange.git
 	cd crypto_exchange
 	```
 2. Install dependencies:
