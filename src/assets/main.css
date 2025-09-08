@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --link-color: rgb(1, 130, 87);
+  --link-hover-color: rgba(0, 189, 126, 0.15);
+  --table-row-hover-color: rgb(245,247,250);
+  --table-head-color: whitesmoke;
+  --input-border-color: rgb(209,213,219);
+  --error-border-color: rgb(255,0,0);
+  --error-bg-color: rgba(255, 0, 0, 0.05);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem;
+  }
+}
+
+.table-container {
+  overflow-y: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: start;
+}
+
+thead {
+  border-block-end: 2px solid;
+  background: var(--table-head-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+th,
+td {
+  border: 1px solid var(--input-border-color);
+  padding: 0.25rem 0.75rem;
+}
+
+tbody tr:hover {
+  background: var(--table-row-hover-color);
+}
+
+input[type='number'],
+select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input[type='number']:focus,
+select:focus,
+input:hover,
+select:hover {
+  border-color: var(--link-color);
+  outline: none;
+}
+
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
