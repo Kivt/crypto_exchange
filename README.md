@@ -37,6 +37,7 @@ Crypto_exchange/
 │   ├── api/               # API calls (e.g., prices)
 │   ├── assets/            # CSS and images
 │   ├── components/        # Reusable Vue components
+│   ├── composables/       # Reusable  logic
 │   ├── router/            # Vue Router setup
 │   ├── stores/            # Pinia stores (state management)
 │   ├── types/             # TypeScript types

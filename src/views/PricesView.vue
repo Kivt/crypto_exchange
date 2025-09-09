@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoading && !coinPrices">Loading...</div>
+  <BaseLoader v-if="isLoading && !coinPrices" />
 
   <BaseErrorDisplay v-else-if="error" :title="error.code" :text="error.message">
     <template #action>
@@ -37,38 +37,27 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import CurrenciesList from '@/components/CurrenciesList.vue'
-import BaseErrorDisplay from '@/components/BaseErrorDisplay.vue'
+import { computed } from 'vue'
 import { useCoinPriceStore } from '@/stores/coinPrice'
-import type { AxiosError } from 'axios'
-import CurrencyExchangeForm from '@/components/CurrencyExchangeForm.vue'
-import BaseButton from '@/components/BaseButton.vue'
 import { useExchangeStore } from '@/stores/exchange'
+import CurrenciesList from '@/components/CurrenciesList.vue'
+import BaseErrorDisplay from '@/components/Base/BaseErrorDisplay.vue'
+import CurrencyExchangeForm from '@/components/CurrencyExchangeForm.vue'
+import BaseButton from '@/components/Base/BaseButton.vue'
+import BaseLoader from '@/components/Base/BaseLoader.vue'
+import { useFetchRequest } from '@/composables/useFetchRequest'
 
 const coinPriceStore = useCoinPriceStore()
 const exchangeStore = useExchangeStore()
 const coinPrices = computed(() => coinPriceStore.prices)
-const isLoading = ref(false)
 
-const error = ref<AxiosError>()
-
-const fetchPrices = async () => {
-  try {
-    isLoading.value = true
-    await coinPriceStore.fetchPrices()
-  } catch (e) {
-    error.value = e as AxiosError
-  } finally {
-    isLoading.value = false
-  }
-}
+const { isLoading, error, fetchData: fetchPrices } = useFetchRequest(coinPriceStore.fetchPrices)
 
 if (!coinPriceStore.prices) {
   fetchPrices()
 }
 // Ideally WebSocket should be used to update prices dynamically
-// but as coingecko don't have them price updated on button click
+// but as coingecko don't have them - price is updated on button click
 </script>
 
 <style scoped>

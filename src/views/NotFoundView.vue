@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-import BaseErrorDisplay from '@/components/BaseErrorDisplay.vue'
+import BaseErrorDisplay from '@/components/Base/BaseErrorDisplay.vue'
 </script>

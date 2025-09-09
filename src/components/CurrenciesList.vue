@@ -16,13 +16,11 @@
       </tbody>
     </table>
   </div>
-
 </template>
 
 <script setup lang="ts">
 import type { CoinPrice } from '@/types'
-import { formatPrice } from '@/utils/priceFormatter'
-import { currencyMap } from '@/utils/currency'
+import { currencyMap, formatPrice } from '@/utils/currency'
 import { computed } from 'vue'
 
 const { prices } = defineProps<{

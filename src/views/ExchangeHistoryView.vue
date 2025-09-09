@@ -4,12 +4,12 @@
 
     <div v-if="!exchangeStore.exchangeHistory.length">No exchange history</div>
 
-    <ExchangeHistoryTable v-else :history="exchangeStore.exchangeHistory" />
+    <CurrencyExchangeHistory v-else :history="exchangeStore.exchangeHistory" />
   </main>
 </template>
 
 <script setup lang="ts">
-import ExchangeHistoryTable from '@/components/ExchangeHistoryTable.vue'
+import CurrencyExchangeHistory from '@/components/CurrencyExchangeHistory.vue'
 import { useExchangeStore } from '@/stores/exchange'
 
 const exchangeStore = useExchangeStore()

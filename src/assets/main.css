@@ -5,10 +5,10 @@
 html {
   --link-color: rgb(1, 130, 87);
   --link-hover-color: rgba(0, 189, 126, 0.15);
-  --table-row-hover-color: rgb(245,247,250);
+  --table-row-hover-color: rgb(245, 247, 250);
   --table-head-color: whitesmoke;
-  --input-border-color: rgb(209,213,219);
-  --error-border-color: rgb(255,0,0);
+  --input-border-color: rgb(209, 213, 219);
+  --error-border-color: rgb(255, 0, 0);
   --error-bg-color: rgba(255, 0, 0, 0.05);
 }
 

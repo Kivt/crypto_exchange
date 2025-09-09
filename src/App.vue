@@ -32,7 +32,7 @@ a {
   border-radius: 0.5rem;
 }
 
-a+a {
+a + a {
   margin-left: 1rem;
 }
 
