@@ -1,6 +1,6 @@
 <template>
   <button :disabled="isLoading" class="base-button">
-    <span :style="{ opacity: isLoading ? '0' : '100' }">
+    <span :style="{ opacity: isLoading ? '0' : '1' }">
       <slot></slot>
     </span>
     <span v-show="isLoading" class="base-button__loading">Loading...</span>
@@ -12,7 +12,8 @@ const { isLoading } = defineProps<{ isLoading: boolean }>()
 </script>
 
 <style scoped>
-button {
+.base-button {
+  position: relative;
   background-color: transparent;
   border: 1px solid var(--link-color);
   border-radius: 0.75rem;
@@ -22,14 +23,8 @@ button {
   color: var(--link-color);
 }
 
-button:hover {
+.base-button:hover {
   background-color: var(--link-hover-color);
-}
-</style>
-
-<style scoped>
-.base-button {
-  position: relative;
 }
 
 .base-button__loading {

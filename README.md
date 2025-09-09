@@ -1,9 +1,9 @@
 # Crypto exchange
 
-Crypto Exchange is a web application for viewing cryptocurrency prices, exchanging currencies, and tracking exchange history. Built with Vue.js and Vite, it provides a user-friendly interface for real-time price updates and seamless currency conversion.
+Crypto Exchange is a web application for viewing cryptocurrency prices, exchanging currencies, and tracking exchange history. Built with Vue.js and Vite, it provides a user-friendly interface for real-time price updates and seamless currency conversion. All price data is sourced from the CoinGecko API.
 
 ## Features
-- View live cryptocurrency prices
+- View live cryptocurrency prices (powered by CoinGecko)
 - Exchange between supported currencies
 - Track your exchange history
 - Responsive and modern UI
@@ -37,7 +37,7 @@ Crypto_exchange/
 │   ├── api/               # API calls (e.g., prices)
 │   ├── assets/            # CSS and images
 │   ├── components/        # Reusable Vue components
-│   ├── composables/       # Reusable  logic
+│   ├── composables/       # Reusable logic
 │   ├── router/            # Vue Router setup
 │   ├── stores/            # Pinia stores (state management)
 │   ├── types/             # TypeScript types
